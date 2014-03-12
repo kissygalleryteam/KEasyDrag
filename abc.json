@@ -1,0 +1,14 @@
+{
+    "name": "KEasyDrag",
+    "version": "1.0",
+    "desc": "简单的拖动组件",
+    "cover": "",
+    "tag":"easydrag",
+    "author": {
+        "name": "昊川",
+        "email": "gonghao.gh@alibaba-inc.com",
+        "page": "https://github.com/haohao667788"
+    },
+    "type": "kissy-gallery",
+    "type-url": "http://gallery.kissyui.com/guide"
+}

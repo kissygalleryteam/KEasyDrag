@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>KEasyDrag的demo</title>
+        <script src="http://g.tbcdn.cn/kissy/k/1.4.0/seed-min.js" charset="utf-8"></script>
+    </head>
+    <body>
+        <h2>KEasyDrag的demo</h2>
+        <div id="con" style="width: 100%; height: 500px; background: red;">
+            限制框
+        </div>
+        <div class="target" style="width: 100px; height: 100px; background: yellow;position: absolute;top: 100px;">
+            <span id="hand" style="width: 10px;height: 10px;background: blue;position: absolute; top: -5px; right: -5px;"></span>
+            通过蓝色handler拖动
+        </div>
+        <div class="target2" style="width: 100px; height: 100px; background: green;position: absolute;top:300px;">
+            直接拖动我
+        </div>
+        <script>
+            var S = KISSY;
+            if (S.Config.debug) {
+                var srcPath = "../../../";
+                S.config({
+                    packages:[
+                        {
+                            name:"gallery",
+                            path:srcPath,
+                            charset:"utf-8",
+                            ignorePackageNameInUri:true
+                        }
+                    ]
+                });
+            }
+
+            S.use('gallery/KEasyDrag/1.0/index', function (S, KEasyDrag) {
+                var easydrag = new KEasyDrag({
+                    elems: '.target'
+                }).setConstrain("#con").setHandler("#hand");
+
+                var easydrag2 = new KEasyDrag({
+                    elems: '.target2'
+                }).setConstrain("#con");
+            });
+        </script>
+    </body>
+</html>
